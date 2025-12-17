@@ -1,5 +1,12 @@
 # chart-idam-pr
 
+DEPRECATED - CFT IdAM changed the mechanism for handling PR urls several years ago and this chart is no longer required.
+
+Note that the IdAM /testing-support/services endpoint that this chart uses does nothing since IdAM 8.2 (Feb 2023).
+Continuing to include the chart is harmless, but the chart itself does nothing.
+
+## Original motivation
+
 Redirect URLs are a critical part of the OAuth2 authorization flow that IDAM implements and Reform Services use to log 
 users into their applications. After a user successfully authenticates with IDAM, IDAM then redirects the user back to 
 the originating application with either an authorization code in the URL. Because the redirect URL contains sensitive 
