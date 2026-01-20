@@ -18,17 +18,17 @@ clean:
 	-kubectl delete pod ${TEST} -n ${NAMESPACE}
 
 lint:
-	helm lint ${CHART} --namespace ${NAMESPACE} -f ci-values.yaml
+	helm lint ${CHART} --namespace ${NAMESPACE}
 
 inspect:
 	helm inspect chart ${CHART}
 
 upgrade:
-	helm upgrade --install ${RELEASE}  ${CHART} --namespace ${NAMESPACE} -f ci-values.yaml  --wait
+	helm upgrade --install ${RELEASE}  ${CHART} --namespace ${NAMESPACE}  --wait
 
 
 deploy:
-	helm install ${CHART} --name ${RELEASE} --namespace ${NAMESPACE} -f ci-values.yaml --wait --debug
+	helm install ${CHART} --name ${RELEASE} --namespace ${NAMESPACE} --wait --debug
 
 test:
 	helm test ${RELEASE}
